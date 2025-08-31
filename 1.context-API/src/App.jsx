@@ -1,34 +1,21 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import ThemeContext from './context/ThemeContext'
 import './App.css'
+import ChangeTheme from './components/ChangeTheme'
 
+// React’te prop drilling sorununu çözmek için gelen dahili (React’in içinde hazır bulunan)
+//  bir mekanizmadır.
+//Normalde React’te veriyi bir üst component’ten alt component’e aktarmak için props kullanırsın.
+//Ama bazen çok derin component hiyerarşilerinde, veriyi taşımak için arada hiçbir iş yapmayan
+//componentlerden props geçirmek zorunda kalınabilir.
+//Buna prop drilling denir.
 function App() {
-  const [count, setCount] = useState(0)
+ 
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+        <ThemeContext.Provider value="light">
+         <ChangeTheme/>
+        </ThemeContext.Provider>
   )
 }
 
