@@ -8,7 +8,8 @@ function ChangeTheme(){
  console.log(data);
     return (
         <div>
-            <button>ChangeTheme</button>
+            <div>{data.theme}</div>
+            <button onClick={() => data.setTheme(data.theme === "light" ? "dark": "light")}>ChangeTheme</button>
         </div>
     )
 }

@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import ThemeContext from './context/ThemeContext'
 import './App.css'
 import ChangeTheme from './components/ChangeTheme'
+import { ThemeContextProvider } from './context/ThemeContext'
+
 
 // React’te prop drilling sorununu çözmek için gelen dahili (React’in içinde hazır bulunan)
 //  bir mekanizmadır.
@@ -13,9 +14,9 @@ function App() {
  
 
   return (
-        <ThemeContext.Provider value="light">
+        <ThemeContextProvider>
          <ChangeTheme/>
-        </ThemeContext.Provider>
+        </ThemeContextProvider>
   )
 }
 
