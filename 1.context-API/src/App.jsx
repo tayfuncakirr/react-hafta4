@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import './App.css'
-import ChangeTheme from './components/ChangeTheme'
 import { ThemeContextProvider } from './context/ThemeContext'
+import { LangProviderContext } from './context/LangContext'
+import Container from './Container'
+
 
 
 // React’te prop drilling sorununu çözmek için gelen dahili (React’in içinde hazır bulunan)
@@ -14,9 +16,13 @@ function App() {
  
 
   return (
+    <div>
+       <LangProviderContext>
         <ThemeContextProvider>
-         <ChangeTheme/>
+         <Container/>
         </ThemeContextProvider>
+        </LangProviderContext> 
+        </div>
   )
 }
 
