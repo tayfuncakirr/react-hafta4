@@ -1,19 +1,19 @@
-import { useState } from 'react'
 import './App.css'
 import Header from './header'
-import Content from './components/content'
+import Content from './content'
+import { TodoProvider } from './context/TodoContext'
 
 
 
 function App() {
 
   return (
-    <>
+    <TodoProvider>
         <section className="todoapp">
           <Header/>
            <Content/>
         </section>
-    </>
+    </TodoProvider>
   )
 }
 

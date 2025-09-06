@@ -8,9 +8,9 @@ function NewTodoForm () {
         initialValues={{
             text:""
         }}
-         onSubmit={async (values) =>{
-            await new Promise ((r)=> setTimeout(r,500));
+         onSubmit={ (values,bag) =>{
             console.log(values)
+            bag.resetForm();
          }}
          validationSchema={validationSchema}
         >
