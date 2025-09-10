@@ -1,8 +1,10 @@
 import React from "react";
 import ContentFooter from "../components/ContentFooter";
 import List from "./list";
+import { useTodo } from "../context/TodoContext";
 
 function Content () {
+
     return(
          <>
          <section className="main">
